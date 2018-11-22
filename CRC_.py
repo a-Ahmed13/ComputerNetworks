@@ -46,10 +46,22 @@ def generator():
     return
 
 """
-Abdulrahman Ahmed 
+Abdelrahman Ahmed 
 """
 def verifier():
-    return
+     with open("generator.txt", "r") as ins:
+        arr = []
+        arr = ins.read().splitlines()
+     ins.close()
+     ins.close()
+     message=int(arr[0],2)
+     G=int(arr[1],2)
+     K=lonDev(message,G,len(arr[0]),len(arr[1]))
+     if K==0:
+        print("the message is correct.\n______________________________________________")
+     else:
+        print("\nerror message.\n____________________________________________")
+     return 
 
 def parser():
     return
