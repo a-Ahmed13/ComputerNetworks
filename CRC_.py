@@ -93,9 +93,9 @@ control
 """
 print("Hello CRC :)\n============================================")
 while 1:
-    print("pleas enter  the input file name")
+    print("please enter  the input file name")
     input_file=input()
-    print("\nfor generator->verifier pleas enter 1\nfor generator->alter->verifier pleas enter 2")
+    print("\nfor generator->verifier please enter 1\nfor generator->alter->verifier please enter 2")
     des=input()
     if des == "1" :
         generator()
