@@ -3,6 +3,22 @@ iput_file="file.txt"
 """
 Abdulrahman Ashraf
 """
+def lonDev(message,devisor,messageLen,divisorLen):
+    R=message>>(messageLen-divisorLen)
+    i=messageLen-divisorLen
+    R=devisor^R
+    while 1 :
+        i-=1
+        if (1<<divisorLen-1)&R:
+            R=R^devisor
+        R=R<<1
+        R|=((1<<i)&message)>>i
+        if i==0:
+            if(1<<divisorLen-1)&R:
+                 R=R^devisor
+            break
+##    print(bin(R))
+    return R
 
 """
 Fouad 
