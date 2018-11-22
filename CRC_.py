@@ -70,13 +70,43 @@ def parser():
 Miechel 
 """
 def alter(index):
-    return
+    with open("generator.txt", "r") as ins:
+        arr = []
+        arr = ins.read().splitlines()
+    ins.close()
+    message=int(arr[0],2)
+    index=len(arr[0])-index
+##    print(arr[0])
+    message^=(1<<index)
+##    print(len(arr[0]))
+    with open('generator.txt', 'w') as the_file:
+        the_file.write("{0:b}".format(message))
+        the_file.write('\n')
+        the_file.write(arr[1])
+    the_file.close()
+##    print(bin(message))
+    return message
 
 """
 Miechel 
 control
 """
-
+print("Hello CRC :)\n============================================")
+while 1:
+    print("pleas enter  the input file name")
+    input_file=input()
+    print("\nfor generator->verifier pleas enter 1\nfor generator->alter->verifier pleas enter 2")
+    des=input()
+    if des == "1" :
+        generator()
+        verifier()
+    elif des == "2" :
+        index=input("please enter alter index\n")
+        generator()
+        alter(int(index))
+        verifier()
+    else :
+        print("wrong input pleas try again")
 
 
 
